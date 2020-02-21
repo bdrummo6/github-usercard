@@ -3,7 +3,18 @@
            https://api.github.com/users/<your name>
 */
 
-axios.get("https://api.github.com/users/bdrummo6");
+// Get the 'div' cards for which all gitcards will be appended to
+const cards = document.querySelector('.cards');
+
+axios.get("https://api.github.com/users/bdrummo6")
+   .then((response) => { // Creates a card based on my github
+      // console.log('success');
+      const gitcard = createCard(response.data);
+      cards.appendChild(gitcard);
+   })
+   .catch((err) => {
+      console.log(err);
+   });
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -26,7 +37,7 @@ axios.get("https://api.github.com/users/bdrummo6");
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = ['tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell'];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -47,9 +58,6 @@ const followersArray = [];
 </div>
 
 */
-
-// Get the 'div' cards for which all gitcards will be appended to
-const cards = document.querySelector('.cards');
 
 const createCard = (obj) => {
    // Creates the 'div' with the class of 'card' this is the card component
