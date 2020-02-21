@@ -7,10 +7,10 @@
 const cards = document.querySelector('.cards');
 
 axios.get("https://api.github.com/users/bdrummo6")
-   .then((response) => { // Creates a card based on my github
+   .then((response) => {
       // console.log('success');
-      const gitcard = createCard(response.data);
-      cards.appendChild(gitcard);
+      const card = createCard(response.data); // Creates a card based on my github
+      cards.appendChild(card); // Appends my card to the 'div' cards
    })
    .catch((err) => {
       console.log(err);
@@ -37,7 +37,21 @@ axios.get("https://api.github.com/users/bdrummo6")
           user, and adding that card to the DOM.
 */
 
+// Used given github handles for the followersArray
 const followersArray = ['tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell'];
+
+// Iterates through each user in the followersArray and creates them a card and appends it to 'cards'
+followersArray.forEach((follower) => {
+   axios.get(`https://api.github.com/users/${follower}`)
+      .then((response) => {
+         // console.log('success');
+         const card = createCard(response.data); // Creates a card based on the followers github
+         cards.appendChild(card); // Appends the followers card to the 'div' cards
+      })
+      .catch((err) => {
+         console.log(err);
+      });
+});
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -129,6 +143,3 @@ const createCard = (obj) => {
 
 };
 
-/* List of LS Instructors Github username's: 
-
-*/

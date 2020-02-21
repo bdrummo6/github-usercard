@@ -27,7 +27,7 @@ In this project we are going to be accessing the GitHub API and building a socia
 
 **Follow these steps for completing your project.**
 
-* [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
+* [X] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
 * [ ] Add your project manager as a reviewer on the pull-request
 * [ ] Your project manager will count the project as complete by merging the branch back into master.
 
@@ -48,7 +48,7 @@ In this project we are going to be accessing the GitHub API and building a socia
 
 ### Part 3: Your Friends
 
-* [ ] After you have successfully added your own card to the DOM, we will get a list of your followers and programmatically add cards for
+* [X] After you have successfully added your own card to the DOM, we will get a list of your followers and programmatically add cards for
  them as well. Follow the instructions in GitHubCard/index.js. 
 
 ### Stretch Goals:
